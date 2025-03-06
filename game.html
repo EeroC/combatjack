@@ -60,13 +60,13 @@ function create() {
     gun = this.add.image(player.x + 30, player.y - 310, 'gun').setOrigin(0.5, 0.1).setVisible(false); 
 
     // Makkaralaskuri
-    sausageCounterText = this.add.text(16, 16, 'Sausages: 0', {
+    sausageCounterText = this.add.text(16, 16, 'Maggarat: 0', {
         fontSize: '32px',
         fill: '#000'
     }).setDepth(1);  // Varmistaa, että tekstin taso on korkein, jotta se ei mene muiden objektien alle
     
     // Pistelaskuri
-    scoreText = this.add.text(600, 16, 'Score: 0', {
+    scoreText = this.add.text(600, 16, 'Pisteet: 0', {
         fontSize: '32px',
         fill: '#000'
     }).setDepth(1);
@@ -147,16 +147,16 @@ function update() {
     if (currentWeapon === 'sword') {
         sword.setPosition(player.x + 30, player.y - 20); // Miekka pelaajan oikealle puolelle
         sword.setVisible(true); // Näytä miekka
-        gun.setVisible(false); // Piilota ase
+        gun.setVisible(false); // Piilota pyssy
     } else if (currentWeapon === 'gun') {
-        gun.setPosition(player.x + 30, player.y - 20); // Ase pelaajan oikealle puolelle
-        gun.setVisible(true); // Näytä ase
+        gun.setPosition(player.x + 30, player.y - 20); // Pyssy pelaajan oikealle puolelle
+        gun.setVisible(true); // Näytä pyssy
         sword.setVisible(false); // Piilota miekka
     }
 
     // Päivitä makkaralaskuri ja pistelaskuri
-    sausageCounterText.setText('Sausages: ' + sausageCount);
-    scoreText.setText('Score: ' + score);
+    sausageCounterText.setText('Maggarat: ' + sausageCount);
+    scoreText.setText('Pisteet: ' + score);
 }
 
 // Funktio vihollisten luomiseen (useampi vihollinen)
