@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Super Combat Jack X: The Doomsday Syndicate</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3.55.2/dist/phaser.min.js"></script>
+</head>
+<body>
+
+    <header>
+        <img src="./imagesWeb/SCJ_Logo.png" alt="Game Logo">
+        <nav>
+            <a href="#" onclick="openModal('home-modal')">Home</a>
+            <a href="#" onclick="openModal('about-modal')">About</a>
+            <a href="#" onclick="openModal('contact-modal')">Contact</a>
+        </nav>
+        <form id="login-form" onsubmit="handleLogin(event)">
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button type="submit">Login</button>
+        </form>
+    </header>
+
+    <!-- Modal Boxes -->
+    <div id="home-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('home-modal')">&times;</span>
+            <h2>Home</h2>
+            <br>
+            <p>Home on hyvää juustossa, pahaa rakennuksen seinissä.</p>
+        </div>
+    </div>
+
+<div id="about-modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('about-modal')">&times;</span>
+        <h2>About</h2>
+        <br>
+        <p>Tää on ihan hirveetä, mene heti pois tältä sivulta.</p>
+    </div>
+</div>
+
+<div id="contact-modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('contact-modal')">&times;</span>
+        <h2>Contact</h2>
+        <br>
+        <p>Älä nyt vittu oikeesti ota mitään yhteyttä, ei mua silleen kiinnosta.</p>
+    </div>
+</div>
+
+<!--SISÄLTÖ ALKAAPI.-->
+<div id="wrapper">
+<br><br>
+<center>
+<div id="otsikkomaatio"><h1>IHAN SAATANAN HUONO PELI - ÄLÄ PELAA!</h1></div>
+</center>
+<br>
+    <div id="main-container">
+        <div id="game-description">
+            <h2>Minkäslaista viinaa toi absintti on?</h2>
+            <br>
+            <p>Minun ystäväni on kuin viinasukka, joka talvella lämmittää. <br><br>
+                Minun ystäväni on teleskooppipatukka, joka tajunnan hämärtää. <br><br>
+                Pullo huuliin kiinni, <br>tule kanssani känniin,<br> minä vien sinut Kontulaan.<br><br> 
+                Kuinka paljon voit juoda, <br>sen tietää vain luoja,<br> ennen kuin alat ontumaan.
+                <br><br>
+                Lasol - näyttää tien.
+            </p>
+            <br>
+            <h4>- Eino Leino (2025)</h4>
+        </div>
+        
+        <center>
+        <div id="game-container"></div>
+        </center>
+        
+        <div id="leaderboard">
+            <h2>Leaderboard</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Player</th>
+                        <th>Score</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Player1</td>
+                        <td>1000</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Player2</td>
+                        <td>800</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Player3</td>
+                        <td>600</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div> <!--SISÄLTÖ LOPPUUPI-->
+</div> <!--WRAPPER LOPPUUPI-->
+
+
+   <footer>
+         <p>Super Combat Jack X 2025 &copy; Vihdillä on oikeudet.</p>
+         <p>Varastamme tietosi ja olet tästä tietoinen.</p>
+         <p>Haluutsä lähtee joraa?</p>
+   </footer>
+
+
+
+   <script src="game.js"></script>
+   <script src="login.js"></script>
+   <script src="modal.js"></script>
+</body>
+</html>
