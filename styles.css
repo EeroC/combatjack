@@ -26,7 +26,7 @@ header {
 }
 
 header img {
-    height: 75px;
+    height: 100px;
 }
 
 nav a {
@@ -73,6 +73,28 @@ nav a:hover {
     display: flex;
     flex-direction: column;
     min-height: 100vh; /* Ensure the wrapper takes the full viewport height */
+}
+
+#otsikkomaatio {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+}
+
+#otsikkomaatio h1 {
+    display: inline-block;
+    padding-left: 100%;
+    animation: scrollText 15s linear infinite;
+}
+
+@keyframes scrollText {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
 }
 
 
@@ -170,6 +192,49 @@ nav a:hover {
     font-size: 24px;
     cursor: pointer;
     color: #333;
+}
+
+/* Style the modal form */
+.modal-content form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px; /* Add spacing between form elements */
+}
+
+.modal-content label {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.modal-content input {
+    width: 80%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.modal-content input:focus {
+    border-color: #007BFF; /* Highlight input on focus */
+    outline: none;
+}
+
+.modal-content button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.modal-content button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
 }
 
 /*MODAL PÄÄTTYY*/
