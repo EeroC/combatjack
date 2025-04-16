@@ -20,6 +20,7 @@ let enemies, sausages, score = 0, enemyCount = 0, sausageCount = 0;
 let sword, gun, currentWeapon = 'sword';
 let background;
 let sausageCounterText, scoreText;
+let jumpSound; // Hyppyääni
 let playerY = 450;  // Pelaajan y-koordinaatti, nostetaan ylemmäs
 
 // Luodaan Phaser-pelimoottori
@@ -34,9 +35,10 @@ function preload() {
     this.load.image('sword', 'images/weapons/sword.png');
     this.load.image('gun', 'images/weapons/gun.png');
     this.load.audio('backgroundMusic', 'audio/background_music.mp3');
+    this.load.audio('jumpSound', 'audio/jump.mp3');
 }
 
-// Luodaan peliin alkutilanteet
+// Luodaan peliin alkutilanteet create-funktiossa
 function create() {
     // Tausta
     background = this.add.tileSprite(0, 0, 2400, 600, 'background').setOrigin(0, 0);
@@ -79,10 +81,13 @@ function create() {
     });
 
     // Taustamusiikki
-    this.sound.play('backgroundMusic', { loop: true, volume: 0.5 });
+    this.sound.play('backgroundMusic', { loop: true, volume: 0.3 });
+
+    // Hyppyäänet
+    jumpSound = this.sound.add('jumpSound');
 }
 
-// Pelin päivitys joka framella
+// Pelin päivitys joka framella update-funktiossa
 function update() {
     if (isAttacking) return;  // Ei liikuta kun pelaaja hyökkää
 
@@ -105,6 +110,7 @@ function update() {
     // Pelaajan hyppy
     if (cursors.up.isDown && player.body.blocked.down) {
         player.setVelocityY(-player.height * 6.25);  // Hyppykorkeus
+        jumpSound.play();  // Soitetaan hyppyääni
     }
 
     // Aseiden sijainti pelaajan mukana
